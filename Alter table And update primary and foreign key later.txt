@@ -1,0 +1,6 @@
+alter table trafficmonitor
+    add constraint
+    foreign key (Eid)
+    references employeerelation(Eid)
+    on delete cascade
+    on update no action;

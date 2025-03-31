@@ -1,0 +1,146 @@
+-- Inserting data into SalaryJob table
+INSERT INTO SalaryJob (Said, Jobtype, Salary) VALUES
+(1, 'Engineer', 5000.00),
+(2, 'Manager', 7000.00),
+(3, 'Clerk', 3000.00),
+(4, 'Technician', 4000.00);
+
+-- Inserting data into CityState table
+INSERT INTO CityState (Cname, State) VALUES
+('Colombo', 'Western'),
+('Kandy', 'Central'),
+('Galle', 'Southern'),
+('Jaffna', 'Northern');
+
+-- Inserting data into CityCountry table
+INSERT INTO CityCountry (Cname, Country) VALUES
+('Colombo', 'Sri Lanka'),
+('Kandy', 'Sri Lanka'),
+('Galle', 'Sri Lanka'),
+('Jaffna', 'Sri Lanka');
+
+-- Inserting data into AirportRelation table
+INSERT INTO AirportRelation (APname, State) VALUES
+('Bandaranaike International', 'Western'),
+('Mattala Rajapaksa International', 'Southern'),
+('Colombo Ratmalana', 'Western'),
+('Jaffna International', 'Northern');
+
+-- Inserting data into AirportCountry table
+INSERT INTO AirportCountry (APname, Country, Cname) VALUES
+('Bandaranaike International', 'Sri Lanka', 'Colombo'),
+('Mattala Rajapaksa International', 'Sri Lanka', 'Galle'),
+('Colombo Ratmalana', 'Sri Lanka', 'Colombo'),
+('Jaffna International', 'Sri Lanka', 'Jaffna');
+
+-- Inserting data into AirlineRelation table
+INSERT INTO AirlineRelation (AirlineID, AName, Code) VALUES
+('A1', 'SriLankan Airlines', 'UL'),
+('A2', 'Emirates', 'EK'),
+('A3', 'Qatar Airways', 'QR'),
+('A4', 'Singapore Airlines', 'SQ');
+
+-- Inserting data into AirportAirline table
+INSERT INTO AirportAirline (APname, AirlineID) VALUES
+('Bandaranaike International', 'A1'),
+('Mattala Rajapaksa International', 'A2'),
+('Colombo Ratmalana', 'A3'),
+('Jaffna International', 'A4');
+
+-- Inserting data into TrafficMonitor table
+INSERT INTO TrafficMonitor (Eid, Shift) VALUES
+(1, 'Morning'),
+(2, 'Afternoon'),
+(3, 'Evening'),
+(4, 'Night');
+
+-- Inserting data into Engineer table
+INSERT INTO Engineer (Eid, Etype) VALUES
+(1, 'Mechanical'),
+(2, 'Electrical'),
+(3, 'Civil'),
+(4, 'Software');
+
+-- Inserting data into AirportAuthority table
+INSERT INTO AirportAuthority (Eid, Position) VALUES
+(1, 'Manager'),
+(2, 'Supervisor'),
+(3, 'Coordinator'),
+(4, 'Assistant');
+
+-- Inserting data into AdministrativeSupport table
+INSERT INTO AdministrativeSupport (Eid, AStype) VALUES
+(1, 'Finance'),
+(2, 'HR'),
+(3, 'Operations'),
+(4, 'IT');
+
+-- Inserting data into EmployeeRelation table
+INSERT INTO EmployeeRelation (Eid, Sex, Age, Address, Fname, Lname, APname, Said) VALUES
+(1, 'M', 30, 'Colombo', 'John', 'Doe', 'Bandaranaike International', 1),
+(2, 'F', 25, 'Kandy', 'Jane', 'Smith', 'Mattala Rajapaksa International', 2),
+(3, 'M', 35, 'Galle', 'Michael', 'Johnson', 'Colombo Ratmalana', 3),
+(4, 'F', 28, 'Jaffna', 'Emily', 'Williams', 'Jaffna International', 4);
+
+-- Inserting data into EmployeePno table
+INSERT INTO EmployeePno (Eid, Pn1, Pn2) VALUES
+(1, '0771234567', '0712345678'),
+(2, '0781234567', '0723456789'),
+(3, '0791234567', '0734567890'),
+(4, '0701234567', '0745678901');
+
+-- Inserting data into FlightRelation table
+INSERT INTO FlightRelation (FlightCode, Arrival, Destination, Source, Status, Duration, FlightType, AirlineID) VALUES
+('FL001', 'Colombo', 'Kandy', 'Colombo', 'On Time', '00:30:00', 'Domestic', 'A1'),
+('FL002', 'Colombo', 'Galle', 'Colombo', 'Delayed', '01:00:00', 'Domestic', 'A2'),
+('FL003', 'Colombo', 'Jaffna', 'Colombo', 'On Time', '00:45:00', 'Domestic', 'A3'),
+('FL004', 'Colombo', 'Kandy', 'Colombo', 'Cancelled', '00:40:00', 'Domestic', 'A4');
+
+-- Inserting data into FlightConnecting table
+INSERT INTO FlightConnecting (PID, LayoverTime, NoOfStops) VALUES
+(1, '00:30:00', 1),
+(2, '01:00:00', 2),
+(3, '00:45:00', 1),
+(4, '00:40:00', 0);
+
+-- Inserting data into EmployerPassenger table
+INSERT INTO EmployerPassenger (Eid, PID) VALUES
+(1, 1),
+(2, 2),
+(3, 3),
+(4, 4);
+
+-- Inserting data into PassengerRelation table
+INSERT INTO PassengerRelation (PID, Age, Sex, Address, Fname, Lname, FlightCode) VALUES
+(1, 30, 'M', 'Colombo', 'John', 'Doe', 'FL001'),
+(2, 25, 'F', 'Kandy', 'Jane', 'Smith', 'FL002'),
+(3, 35, 'M', 'Galle', 'Michael', 'Johnson', 'FL003'),
+(4, 28, 'F', 'Jaffna', 'Emily', 'Williams', 'FL004');
+
+-- Inserting data into PassengerPno table
+INSERT INTO PassengerPno (PID, Pn1, Pn2) VALUES
+(1, '0771234567', '0712345678'),
+(2, '0781234567', '0723456789'),
+(3, '0791234567', '0734567890'),
+(4, '0701234567', '0745678901');
+
+-- Inserting data into PassengerPassport table
+INSERT INTO PassengerPassport (PID, PassportNo) VALUES
+(1, 'P12345678'),
+(2, 'P23456789'),
+(3, 'P34567890'),
+(4, 'P45678901');
+
+-- Inserting data into TicketRelation table
+INSERT INTO TicketRelation (Tno, Source, DateOfTravel, DateOfBooking, DateOfCancellation, PID, PassportNo, PCID) VALUES
+(1, 'Colombo', '2024-12-01', '2024-11-20', NULL, 1, 'P12345678', 1),
+(2, 'Colombo', '2024-12-05', '2024-11-25', NULL, 2, 'P23456789', 2),
+(3, 'Colombo', '2024-12-10', '2024-11-30', NULL, 3, 'P34567890', 3),
+(4, 'Colombo', '2024-12-15', '2024-12-01', NULL, 4, 'P45678901', 4);
+
+-- Inserting data into PassengerClass table
+INSERT INTO PassengerClass (PCID, Destination, Class, Surcharge, SeatNo, Price) VALUES
+(1, 'Kandy', 'Economy', 50.00, 'A1', 150.00),
+(2, 'Galle', 'Business', 100.00, 'B1', 200.00),
+(3, 'Jaffna', 'First Class', 150.00, 'C1', 300.00),
+(4, 'Kandy', 'Economy', 50.00, 'A2', 150.00);
